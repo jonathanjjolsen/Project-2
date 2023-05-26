@@ -17,6 +17,7 @@ Item.init(
     },
     description: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     price: {
       type: DataTypes.INTEGER,
