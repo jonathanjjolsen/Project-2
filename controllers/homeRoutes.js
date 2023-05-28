@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all items for sale and JOIN with user data
     const itemData = await Item.findAll({
       include: [
         {
@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const items = itemData.map((item) => item.get({ plain: true }));
+    console.log(items);
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
