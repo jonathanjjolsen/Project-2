@@ -81,4 +81,38 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  // Render the signup page if user isn't already logged in
+  res.render('signup');
+});
+
+router.post('/signup', async (req, res) => {
+  try {
+
+    console.log(req.body.username);
+    const userData = await User.create(req.body);
+   
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      //res.status(200).json(userData);
+      res.redirect('/login');
+    });
+
+   
+
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+
+  
+});
+
 module.exports = router;
