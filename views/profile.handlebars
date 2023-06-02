@@ -8,36 +8,67 @@
   <div class="col-md-6">
     <h3>Create a New Post:</h3>
 
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">Item name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+    <form class="form new-item-form">
+      <div class="row">
+        <div class="form-group input-field col s4">
+          <label for="item-name">Item Name</label>
+          <input id="item-name" type="text" class="validate" name="item-name">
+        </div>
       </div>
-      <div class="form-group">
-        <label for="project-funding">Price($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+      <div class="row">
+        <div class="form-group input-field col s4">
+          <label for="item-price">Price</label>
+          <input id="item-price" type="number" class="validate" name="item-price">
+        </div>
       </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+      <div class="row">
+        <div class="form-group input-field col s4">
+          <label for="item-manufacturer">Manufacturer</label>
+          <input id="item-manufacturer" type="text" class="validate" name="item-manufacturer">
+        </div>
       </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+      <div class="row">
+        <div class="form-group input-field col s4">
+          <label for="item-color">Color</label>
+          <input id="item-color" type="text" class="validate" name="item-color">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group input-field col s4">
+          <label for="item-year">Year Manufactured</label>
+          <input id="item-year" type="number" class="validate" name="item-year">
+        </div>
+      </div>
+      <div class="form-group col s12">
+        <label for="item-desc">Description:</label>
+        <textarea class="form-input" id="item-desc" name="item-desc"></textarea>
+      </div>
+      <div class="row">
+        <div class="form-group col s12">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
       </div>
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  {{#if items.length}}
+  <div class="col-md-6 items-list">
+    <h3>My Posts:</h3>
 
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+    {{#each items as |item|}}
+    <div class="row">
+      <div class="col s12 m7">
+        <div class="card">
+          <div class="card-image">
+            <img src="../assets/images/randomimage.jpg">
+          </div>
+          <div class="card-content">
+            <a class="card-item-name" href="/item/{{item.id}}">{{item.name}}</a>
+          </div>
+          <div class="card-action">
+            <a class="btn btn-sm btn-danger" data-id="{{item.id}}">DELETE</a>
+          </div>
+        </div>
       </div>
     </div>
     {{/each}}
