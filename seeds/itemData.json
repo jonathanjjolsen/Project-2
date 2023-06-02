@@ -3,6 +3,9 @@
     "name": "Guitar",
     "description": "A 1980 Les Paul guitar. Minimal wear. Used by famous musician in concert tour. Signed on lower right side.",
     "price": 5000,
+    "manufacturer": "Les Paul",
+    "color": "Brown",
+    "year": "1980",
     "category_id": 3,
     "user_id": 1
   },
@@ -10,6 +13,9 @@
     "name": "Toyota 4Runner",
     "description": "2012 Toyota 4Runner. 140k miles. New tires, headlights, and reverse sensor. Has been in one accident but only recieved cosmetic damage.",
     "price": 13000,
+    "manufacturer": "Toyota",
+    "color": "White",
+    "year": 2012,
     "category_id": 1,
     "user_id": 2
   },
@@ -17,6 +23,9 @@
     "name": "MSI Laptop",
     "description": "Lenovo gaming laptop. Has an intel i7 cpu and an NVIDIA 2070 super m gpu. Runs great. Recently disassembled back plate and cleaned dust out of the air ducts.",
     "price": 5000,
+    "manufacturer": "MSI",
+    "color": "Black",
+    "year": "2019",
     "category_id": 2,
     "user_id": 3
   }
