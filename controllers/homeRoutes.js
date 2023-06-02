@@ -81,4 +81,37 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  const errorMessage = req.flash('errorMessage');
+  res.render('signup', { errorMessage });
+});
+
+router.post('/signup', async (req, res) => {
+  try {
+    const existingUser = await User.findOne({ where: { email: req.body.email } });
+    
+    if (existingUser) {
+      req.flash('errorMessage', 'The user/email already exists');
+      res.redirect('/signup');
+    } else {
+      const userData = await User.create(req.body);
+   
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.logged_in = true;
+
+        res.redirect('/login');
+      });
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

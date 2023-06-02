@@ -17,4 +17,7 @@ a.card-item-name:active {
   padding-top: 10%;
 }
 
-
+#error-message {
+  color: red;
+  font-weight: bold;
+}
