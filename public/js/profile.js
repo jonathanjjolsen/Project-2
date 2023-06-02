@@ -2,13 +2,16 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#item-name').value.trim();
-  const needed_funding = document.querySelector('#item-funding').value.trim();
+  const price = document.querySelector('#item-price').value.trim();
+  const manufacturer = document.querySelector('#item-manufacturer').value.trim();
+  const color = document.querySelector('#item-color').value.trim();
+  const year = document.querySelector('#item-year').value.trim();
   const description = document.querySelector('#item-desc').value.trim();
 
-  if (name && needed_funding && description) {
+  if (name && price && description) {
     const response = await fetch(`/api/items`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ name, price, manufacturer, color, year, description }),
       headers: {
         'Content-Type': 'application/json',
       },
