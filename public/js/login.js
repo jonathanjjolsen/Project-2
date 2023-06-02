@@ -17,7 +17,8 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
     } else {
-      alert(response.statusText);
+      const data = await response.json();
+      alert(data.message || response.statusText);
     }
   }
 };
@@ -30,7 +31,7 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector('#password-signup').value.trim();
 
   if (name && email && password) {
-    const response = await fetch('/api/users', {
+    const response = await fetch('/signup', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -39,7 +40,10 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert(response.statusText);
+      const data = await response.json();
+      // handle error response
+      const errorMessageDiv = document.getElementById('error-message');
+      errorMessageDiv.textContent = data.message || response.statusText;
     }
   }
 };

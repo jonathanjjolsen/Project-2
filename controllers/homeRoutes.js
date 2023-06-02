@@ -87,32 +87,31 @@ router.get('/signup', (req, res) => {
     return;
   }
 
-  // Render the signup page if user isn't already logged in
-  res.render('signup');
+  const errorMessage = req.flash('errorMessage');
+  res.render('signup', { errorMessage });
 });
 
 router.post('/signup', async (req, res) => {
   try {
-
-    console.log(req.body.username);
-    const userData = await User.create(req.body);
+    const existingUser = await User.findOne({ where: { email: req.body.email } });
+    
+    if (existingUser) {
+      req.flash('errorMessage', 'The user/email already exists');
+      res.redirect('/signup');
+    } else {
+      const userData = await User.create(req.body);
    
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.logged_in = true;
 
-      //res.status(200).json(userData);
-      res.redirect('/login');
-    });
-
-   
-
+        res.redirect('/login');
+      });
+    }
   } catch (err) {
     console.log(err);
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
-
-  
 });
 
 module.exports = router;
