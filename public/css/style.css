@@ -39,3 +39,7 @@ background-color: white;
   align-items: center;
 }
 
+#category-label {
+  top: -40px;
+}
+
