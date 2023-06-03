@@ -7,6 +7,13 @@ const newFormHandler = async (event) => {
   const color = document.querySelector('#item-color').value.trim();
   const year = document.querySelector('#item-year').value.trim();
   const description = document.querySelector('#item-desc').value.trim();
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    let elems = document.querySelectorAll('select');
+    let instances = M.FormSelect.init(elems, options);
+
+    choice = instances.getSelectedValues();
+  });
 
   if (name && price && description) {
     const response = await fetch(`/api/items`, {
@@ -45,6 +52,6 @@ document
   .querySelector('.new-item-form')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.item-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.item-list')
+//   .addEventListener('click', delButtonHandler);
