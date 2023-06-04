@@ -2,13 +2,16 @@
   <h2>{{name}}</h2>
   <p>{{{get_emoji}}}</p>
   <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p>Posted by {{user.name}} on {{format_date date_created}}</p>
   <p>
     <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
+    <span class="dollar-amount">{{format_amount price}}</span>
     needed
   </p>
   <p>
-    <button class="btn btn-primary">Fund this Project!</button>
+    <button class="btn">Inquire about this item!</button>
+  </p>
+  <p>
+    <button class="btn">Back to search</button>
   </p>
 </div>
