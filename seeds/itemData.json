@@ -28,5 +28,35 @@
     "year": "2019",
     "category_id": 2,
     "user_id": 3
+  },
+  {
+    "name": "Astros A50 Headphones",
+    "description": "Astro branded headphones. Lightly used. Compatible with PC/MAC, XBOX Series X|S, but not with PS5. Wireless headset with Flip-to-Mute mic, 3D audio ready, Dolby Audio and more. ",
+    "price": 250,
+    "manufacturer": "Astros",
+    "color": "Black and Gold",
+    "year": "2022",
+    "category_id": 2,
+    "user_id": 2
+  },
+  {
+    "name": "Saxophone",
+    "description": "Saxophone that has been used by my son while in school. Purchased in 2007 and used until 2011. Properly maintained and keypads have been replaced recently. Does not come with mouthpiece.",
+    "price": 1200,
+    "manufacturer": "Canonball",
+    "color": "Gold",
+    "year": "2007",
+    "category_id": 3,
+    "user_id": 3
+  },
+  {
+    "name": "Nokia Cell Phone",
+    "description": "Old phone that still works perfectly fine. Been through the trials and tribulations that no other phone would survive. Finally upgrading my phone to a Razr, heard they are good.",
+    "price": 30,
+    "manufacturer": "Nokia",
+    "color": "Blue",
+    "year": "2000",
+    "category_id": 2,
+    "user_id": 1
   }
 ]
