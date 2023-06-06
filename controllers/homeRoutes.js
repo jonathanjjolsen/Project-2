@@ -98,6 +98,9 @@ router.post('/signup', async (req, res) => {
     if (existingUser) {
       req.flash('errorMessage', 'The user/email already exists');
       res.redirect('/signup');
+    } else if (req.body.password.length < 8) {   // Check if password length is less than 8
+      req.flash('errorMessage', 'Password should be at least 8 characters');
+      res.redirect('/signup');
     } else {
       const userData = await User.create(req.body);
    
@@ -109,9 +112,13 @@ router.post('/signup', async (req, res) => {
       });
     }
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    if (err.name === 'SequelizeValidationError') {
+      req.flash('errorMessage', 'Validation error occurred. Please ensure that all fields meet requirements.');
+    } else {
+      console.log(err);
+      res.status(500).json(err);
+    }
+    res.redirect('/signup');
   }
 });
-
 module.exports = router;
