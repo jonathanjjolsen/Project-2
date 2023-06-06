@@ -66,3 +66,22 @@ a.card-item-name:active {
   padding-bottom: 2%;
 }
 
+#newpostanchor{
+  font-size: xx-large;
+}
+
+#npcontain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  #npcontain {
+    flex-direction: column;
+  }
+}
+
+
+
+

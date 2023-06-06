@@ -44,19 +44,19 @@ https://github.com/jonathanjjolsen/TradeHub.git
 8. Users interested in purchasing the items will use the posted contacted information of the seller to arrange/negotiate purchase.
 
 ## Main Components:
-Node.js
-Handlebars.js
-Materialize
-MySql
+Node.js <br/>
+Handlebars.js <br/>
+Materialize <br/>
+MySql <br/>
 Express
 
 
 
 
 ## Designed and created by:
-Chris Gramer
-Jonathan Olsen
-Adam Fox
+Chris Gramer<br/>
+Jonathan Olsen<br/>
+Adam Fox<br/>
 Bill Hamilton
 
 
