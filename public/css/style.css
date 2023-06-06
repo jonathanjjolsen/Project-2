@@ -43,3 +43,8 @@ background-color: white;
 #category {
   padding-top: 40px;
 }
+
+#main {
+  display: flex;
+  flex-wrap: wrap;
+}
