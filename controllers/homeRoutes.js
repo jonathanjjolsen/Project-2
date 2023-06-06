@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Item, User, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Homepage selection. this renders the homepage handlebars.
 router.get('/', async (req, res) => {
   try {
     // Get all items for sale and JOIN with user data
@@ -29,6 +30,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Get route that uses the withAuth custom middleware. This specific route will get the specific item attached to the ID. However, if the user is NOT logeed in, it will direct them to the log in page. 
 router.get('/item/:id', withAuth, async (req, res) => {
   try {
     const itemData = await Item.findByPk(req.params.id, {
@@ -51,7 +53,7 @@ router.get('/item/:id', withAuth, async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
+// Get route that also uses the withAuth custom middleware. This route takes the user to their profile. However, if the user is not logged it it will direct them to log in since when you are not logged in, there is no profile. 
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -71,8 +73,10 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+// Get route that sends the user to the login page. However, if the client is already logged in it will just send the user to their profile. 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+
+  // this if statement is what will determine if the client is logged in or not. 
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
@@ -81,6 +85,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Get route that sends the user to the signup page. If the client is already signed in, then it will just take them to their profile. 
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/profile');
@@ -91,14 +96,19 @@ router.get('/signup', (req, res) => {
   res.render('signup', { errorMessage });
 });
 
+// This route is a POST route for sign up. Once the client has filled in the necessary information, the server will create the profile with the users informaiton. 
 router.post('/signup', async (req, res) => {
   try {
+    // const to determine if a user already exists
     const existingUser = await User.findOne({ where: { email: req.body.email } });
     
+    // if statement that takes the const created and matches it to the attempted signup informaiton. If there is a user/email already there, then it will alert the user that this already exists. 
     if (existingUser) {
       req.flash('errorMessage', 'The user/email already exists');
       res.redirect('/signup');
-    } else if (req.body.password.length < 8) {   // Check if password length is less than 8
+
+      // This forces the user to select a password that is 8 or greater characters in length
+    } else if (req.body.password.length < 8) {  
       req.flash('errorMessage', 'Password should be at least 8 characters');
       res.redirect('/signup');
     } else {

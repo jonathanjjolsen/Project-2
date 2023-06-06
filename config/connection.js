@@ -19,3 +19,5 @@ if (process.env.JAWSDB_URL) {
 }
 
 module.exports = sequelize;
+
+// This allows the user to connect to their mysql and allow the program to have access to the databases and tables where the information is stored

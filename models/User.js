@@ -56,3 +56,6 @@ User.init(
 );
 
 module.exports = User;
+
+
+// class constructor for users. This is a set standard of each user. Each user will have specific information tied to it that will become pertenit when attempting to log in. Also, this allows the password to be read when it is bcrpyt. 

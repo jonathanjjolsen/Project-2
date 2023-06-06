@@ -21,4 +21,5 @@ module.exports = {
   },
 };
 
+// Additional code that will format date and amounts to a specific set up so developer does not need to every single time. 
 
