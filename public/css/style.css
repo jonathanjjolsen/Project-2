@@ -44,6 +44,10 @@ a.card-item-name:active {
   padding-top: 40px;
 }
 
+#main {
+  display: flex;
+  flex-wrap: wrap;
+}
 .underline {
   text-decoration: underline;
   text-decoration-thickness: 2px;
