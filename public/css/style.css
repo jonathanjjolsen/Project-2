@@ -22,12 +22,15 @@ a.card-item-name:active {
   font-weight: bold;
 }
 
-#mainlogo {
-position: relative;
-width: 100%;
-height: 100%;
-background-color: white;
+
+#logo{
+  position: relative;
+  max-height: 64px;
+  
+
+
 }
+
 
 
 
@@ -43,3 +46,10 @@ background-color: white;
 #category {
   padding-top: 40px;
 }
+
+
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+

@@ -1,17 +1,25 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
-  <p>Posted by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount price}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn">Inquire about this item!</button>
-  </p>
-  <p>
-    <button class="btn">Back to search</button>
-  </p>
+<div class="row">
+  <div class="col s6 offset-s3">
+    <div class="card blue-grey darken-1">
+      <div class="card-action white-text">
+
+        <h2 class="center underline">{{name}}</h2>
+        <p>{{description}}</p>
+        <p>Made by: {{manufacturer}}</p>
+        <p>Color: {{color}}</p>
+        <p>Year: {{year}}</p>
+        <p>Posted on {{format_date date_created}}</p>
+        <p>
+          <span>Cost: $</span>
+          <span class="dollar-amount">{{format_amount price}}</span>
+        </p>
+
+        <div class="center">
+          <button class="btn">Back to search</button>
+          <button class="btn">Inquire about this item!</button>
+          <a class="btn btn-sm btn-danger" data-id="{{item.id}}">DELETE</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

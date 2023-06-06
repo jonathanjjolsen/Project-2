@@ -10,39 +10,41 @@
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    
-    <nav>
-    <div class="nav-wrapper blue-grey darken-1">
-      
-      <a href="/"><img src="../assets/images/TradeHub_Logo.jpg"></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/profile">Login</a></li>
-      </ul> 
-          </div>  
-    </div>
 
-    {{#if logged_in}}
-          <a href="/profile">profile</a> |
-          <button class="no-button right-aligned" id="logout">logout</button>
-          {{else}}
-      
-          {{/if}}
-  </nav>
-   <nav>
-    <div class="nav-wrapper blue-grey darken-1">
-      <form>
-        <div class="input-field">
-          <input id="search" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
+  <body>
+    <nav class="nav-wrapper row blue-grey darken-1">
+        <div class="col s3">
+         <a href="/"><img class="responsive img" id="logo" src="../assets/images/TradeHub_Logo.jpg"></a>
         </div>
-      </form>
-    </div>
-  </nav>
-       
-        </header>
+        <div class="col s8 input-field">
+          <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+        </div>
+        <div class="col s1">
+     
+      {{#if logged_in}}
+      <a href="/profile">profile</a> |
+      <button class="no-button right-aligned" id="logout">logout</button>
+      {{else}}
+      <a href="/profile">Login</a>
+      {{/if}}
+      </div>
+      </div>
+
    
+    
+       
+    </nav>
+<div>yeyyeyeyeyeyeyey</div>
+
+
+
+
+
+
+  
+
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
@@ -50,13 +52,13 @@
     <footer>
 
     </footer>
-  </div>
+    </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
 
 </html>
