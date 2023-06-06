@@ -24,9 +24,7 @@ a.card-item-name:active {
 
 #logo{
   position: relative;
-  max-height: 120px;
-  padding-top: 10px;
-
+  max-height: 85px;
 }
 
 .Toppage {
@@ -53,7 +51,6 @@ a.card-item-name:active {
   height:auto;
   display: flex;
   align-items: center;
-  max-height: 50px;
 }
 
 #navform {
