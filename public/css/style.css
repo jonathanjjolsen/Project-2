@@ -22,34 +22,11 @@ a.card-item-name:active {
   font-weight: bold;
 }
 
-
 #logo{
   position: relative;
   max-height: 64px;
   
-
-
 }
 
 
-
-
-.Toppage {
-  display: flex;
-  align-items: center;
-}
-
-#category-label {
-  top: -40px;
-}
-
-#category {
-  padding-top: 40px;
-}
-
-
-.underline {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-}
 
