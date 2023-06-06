@@ -10,6 +10,52 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+
+  <body>
+    <nav class="nav-wrapper row blue-grey darken-1">
+        <div class="col s3">
+         <a href="/"><img class="responsive img" id="logo" src="../assets/images/TradeHub_Logo.jpg"></a>
+        </div>
+        <div class="col s8 input-field">
+          <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+        </div>
+        <div class="col s1">
+      <a href="/profile">Login</a>
+      {{#if logged_in}}
+      <a href="/profile">profile</a> |
+      <button class="no-button right-aligned" id="logout">logout</button>
+      {{else}}
+
+      {{/if}}
+      </div>
+      </div>
+
+   
+    
+       
+    </nav>
+
+
+
+
+
+
+
+    </header>
+
+    <main class="container container-fluid mt-5">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+    <footer>
+
+    </footer>
+    </div>
+
+=======
   <div class="flex-column justify-space-around">
 
     <nav>
@@ -50,11 +96,16 @@
   <footer>
 
     </header>
+>>>>>>> ab21056b4340e0af7628042fcfb36249f7a2e5f1
     <!-- Render script for logged in users only -->
     {{#if logged_in}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/js/logout.js"></script>
     {{/if}}
+<<<<<<< HEAD
+  </body>
+=======
 </body>
+>>>>>>> ab21056b4340e0af7628042fcfb36249f7a2e5f1
 
 </html>
