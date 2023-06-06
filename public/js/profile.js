@@ -7,18 +7,12 @@ const newFormHandler = async (event) => {
   const color = document.querySelector('#item-color').value.trim();
   const year = document.querySelector('#item-year').value.trim();
   const description = document.querySelector('#item-desc').value.trim();
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    let elems = document.querySelectorAll('select');
-    let instances = M.FormSelect.init(elems, options);
-
-    choice = instances.getSelectedValues();
-  });
+  const category_id = document.querySelector('#dropdown').value.trim();
 
   if (name && price && description) {
     const response = await fetch(`/api/items`, {
       method: 'POST',
-      body: JSON.stringify({ name, price, manufacturer, color, year, description }),
+      body: JSON.stringify({ name, price, manufacturer, color, year, description, category_id }),
       headers: {
         'Content-Type': 'application/json',
       },

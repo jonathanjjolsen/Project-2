@@ -9,54 +9,83 @@
     <h3>Create a New Post:</h3>
 
     <form class="form new-item-form">
+
       <div class="row">
         <div class="form-group input-field col s4">
           <label for="item-name">Item Name</label>
           <input id="item-name" type="text" class="validate" name="item-name">
         </div>
       </div>
+
       <div class="row">
         <div class="form-group input-field col s4">
           <label for="item-price">Price</label>
           <input id="item-price" type="number" class="validate" name="item-price">
         </div>
       </div>
+
+      <div class="row" id="category">
+        <div class="form-group input-field col s4">
+          <label id="category-label">Select A Category</label>
+          <select id="dropdown" class="browser-default">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Cars</option>
+            <option value="2">Electronics</option>
+            <option value="3">Instruments</option>
+            <option value="4">Tools</option>
+            <option value="5">Sporting Equipment</option>
+            <option value="6">Furniture</option>
+            <option value="7">Appliances</option>
+          </select>
+        </div>
+      </div>
+
       <div class="row">
         <div class="form-group input-field col s4">
           <label for="item-manufacturer">Manufacturer</label>
           <input id="item-manufacturer" type="text" class="validate" name="item-manufacturer">
         </div>
       </div>
+
       <div class="row">
         <div class="form-group input-field col s4">
           <label for="item-color">Color</label>
           <input id="item-color" type="text" class="validate" name="item-color">
         </div>
       </div>
+
       <div class="row">
         <div class="form-group input-field col s4">
           <label for="item-year">Year Manufactured</label>
           <input id="item-year" type="number" class="validate" name="item-year">
         </div>
       </div>
-      <div class="input-field col s12">
-        <label id="category-label">Select A Category</label>
-        <select id="dropdown" class="browser-default">
-          <option value="" disabled selected>Choose your option</option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select>
+
+      <div class="row">
+        <div class="form-group col s4">
+          <label for="item-desc">Description:</label>
+          <textarea class="form-input" id="item-desc" name="item-desc"></textarea>
+        </div>
       </div>
-      <div class="form-group col s12">
-        <label for="item-desc">Description:</label>
-        <textarea class="form-input" id="item-desc" name="item-desc"></textarea>
+
+      <div class="row">
+        <div class="form-group col s4 file-field input-field">
+          <div class="btn">
+            <span>Add Photo</span>
+            <input type="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
       </div>
+
       <div class="row">
         <div class="form-group col s12">
           <button type="submit" class="btn btn-primary">Create</button>
         </div>
       </div>
+
     </form>
   </div>
 
