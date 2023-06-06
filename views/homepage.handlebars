@@ -1,18 +1,18 @@
 <!-- Loop over each object in the items array -->
 <div class="row">
-{{#each items as |item| }}
-      <div class="col s12 m6 l3">
-        <div class="card">
-          <div class="card-image">
-            <img src="../assets/images/placeholder.jpg" id="img">
-          </div>
-          <div class="card-content">
-            <a class="card-item-name name" href="/item/{{item.id}}">{{item.name}}</a>
-            <p>${{item.price}}</p>
-            <p>Posted: {{format_date item.date_created}}</p>
-          </div>
-        </div>
+  {{#each items as |item| }}
+  <div class="col s12 m6 l3">
+    <div class="card">
+      <div class="card-image">
+        <img src="../assets/images/placeholder.jpg" id="img">
       </div>
-{{/each}}
+      <div class="card-content">
+        <a class="card-item-name name" href="/item/{{item.id}}">{{item.name}}</a>
+        <p>${{item.price}}</p>
+        <p>Posted: {{format_date item.date_created}}</p>
+      </div>
+    </div>
+  </div>
+  {{/each}}
 
 </div>

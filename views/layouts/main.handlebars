@@ -40,31 +40,21 @@
       </form>
     </div>
   </nav>
-       
-        </header>
-   
-    <main class="container container-fluid" id="main">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
 
   </header>
 
-  <main class="container container-fluid mt-5">
+  <main class="container container-fluid">
     <!-- Render the sub layout -->
     {{{ body }}}
   </main>
   <footer>
 
-  </footer>
-  </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    </header>
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>
