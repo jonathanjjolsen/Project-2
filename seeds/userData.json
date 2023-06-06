@@ -13,5 +13,20 @@
     "name": "Amiko",
     "email": "amiko2k20@aol.com",
     "password": "password12345"
+  },
+  {
+    "name": "Elon",
+    "email": "Elon@twitter.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Kang",
+    "email": "Kang@MCU.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Superman",
+    "email": "Clark@thedailyplanet.com",
+    "password": "password12345"
   }
 ]
