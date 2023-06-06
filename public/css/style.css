@@ -22,17 +22,10 @@ a.card-item-name:active {
   font-weight: bold;
 }
 
-
 #logo{
   position: relative;
-  max-height: 64px;
-  
-
-
+  max-height: 85px;
 }
-
-
-
 
 .Toppage {
   display: flex;
@@ -51,5 +44,25 @@ a.card-item-name:active {
 .underline {
   text-decoration: underline;
   text-decoration-thickness: 2px;
+}
+
+#nav {
+  min-height: 100px;
+  height:auto;
+  display: flex;
+  align-items: center;
+}
+
+#navform {
+  justify-self: right;
+  max-height: 75px;
+}
+
+#searchbar {
+  padding-left: 50px;
+  padding-top: 4px;
+}
+.material-icons {
+  padding-bottom: 2%;
 }
 
