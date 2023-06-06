@@ -22,17 +22,11 @@ a.card-item-name:active {
   font-weight: bold;
 }
 
-
 #logo{
   position: relative;
   max-height: 64px;
   
-
-
 }
-
-
-
 
 .Toppage {
   display: flex;
@@ -52,4 +46,5 @@ a.card-item-name:active {
   text-decoration: underline;
   text-decoration-thickness: 2px;
 }
+
 
