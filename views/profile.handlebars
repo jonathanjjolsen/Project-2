@@ -6,7 +6,7 @@
 </div>
 
 
-<div class="row">
+<div class="row item-list">
   {{#if items.length}}
   <h3>My Posts:</h3>
   <div class="row">
@@ -20,6 +20,7 @@
           <a class="card-item-name name" href="/item/{{item.id}}">{{item.name}}</a>
           <p>${{item.price}}</p>
           <p>Posted: {{format_date item.date_created}}</p>
+           <a class="btn btn-sm btn-danger" data-id="{{item.id}}">DELETE</a>
         </div>
       </div>
     </div>
