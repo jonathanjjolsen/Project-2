@@ -8,3 +8,6 @@ const withAuth = (req, res, next) => {
 };
 
 module.exports = withAuth;
+
+
+// custom middleware verifies that the client is logged in. If not, it will redirect to the login page. Once verified it will move on to the next part of the function

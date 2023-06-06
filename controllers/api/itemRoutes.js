@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Item } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Post route that allows the user to create a new item post. If the client is not logged in though, it will send them to the log in page with the custom withAuth middleware
 router.post('/', withAuth, async (req, res) => {
   try {
     const newItem = await Item.create({
@@ -15,6 +16,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// Delete route that allows the user to delete one of their posts
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const itemData = await Item.destroy({

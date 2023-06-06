@@ -5,6 +5,7 @@ const userData = require('./userData.json');
 const itemData = require('./itemData.json');
 const categoryData = require('./categoryData.json');
 
+// async function that will create information for the seeds in file
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 

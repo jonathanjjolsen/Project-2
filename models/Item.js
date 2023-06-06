@@ -69,3 +69,6 @@ Item.init(
 );
 
 module.exports = Item;
+
+
+// class constructor for items. This is a set standard of each item. Each category will have specific information tied to it that will become available when called upon.
