@@ -58,5 +58,65 @@
     "year": "2000",
     "category_id": 2,
     "user_id": 1
+  },
+  {
+    "name": "Hammer",
+    "description": "Old massive hammer. Not your typical household hammer, the head is just a big square metal thing. I can't pick it up and it's just in the way of everything. It landed in my backyard and I just want it out. Looks old, maybe 1800's? ",
+    "price": 0,
+    "manufacturer": "The Sky",
+    "color": "Silver",
+    "year": "1800",
+    "category_id": 4,
+    "user_id": 4
+  },
+  {
+    "name": "Baseball Glove",
+    "description": "Worn by the great Don Kelly. Long time Tigers player who could play literally any position! It's worn down and the signature has faded as well ",
+    "price": 300,
+    "manufacturer": "Rawling",
+    "color": "Brown",
+    "year": "2007",
+    "category_id": 5,
+    "user_id": 5
+  },
+  {
+    "name": "Blue's Clue's Chair",
+    "description": "Chair that came directly from the set! Please don't ask how I got it, but I was lucky enough to be at the right time and right place! It's great for comfortable sitting and reading but it's taking a lot of space and I need to get it out of my house. ",
+    "price": 450,
+    "manufacturer": "Big Lots",
+    "color": "Red",
+    "year": "1996",
+    "category_id": 6,
+    "user_id": 6
+  },
+  {
+    "name": "Pontiac Sunfire",
+    "description": "Great first time car. Has about 175k miles and runs well. Tires recently changed and oil has been changed as well. No major accidents just minor bumps and bruises.",
+    "price": 1200,
+    "manufacturer": "Pontiac",
+    "color": "Gold",
+    "year": "2005",
+    "category_id": 5,
+    "user_id": 1
+  },
+  {
+    "name": "Phone booth",
+    "description": "Such a cool artifact. Came with the house we bought and I have no use for it. Kids use it and will be in there for hours. Looking to rehome this!",
+    "price": 1500,
+    "manufacturer": "British Broadcasting Corporation",
+    "color": "Blue",
+    "year": "1700",
+    "category_id": 6,
+    "user_id": 7
+  },
+  {
+    "name": "Signed Michael Jordan Baseball Card",
+    "description": "I was able to meeting Jordan in Chicago one time and I brought a baseball card in hopes to catch up with him. To my delight I was able to get this card signed and it's been framed ever since. I am looking to sell this to purchase some new memorbilia.",
+    "price": 2200,
+    "manufacturer": "Topps",
+    "color": "White",
+    "year": "1994",
+    "category_id": 5,
+    "user_id": 4
   }
 ]
