@@ -4,28 +4,62 @@
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
+<div class="row">
+  {{#if items.length}}
+    <h3>My Posts:</h3>
+
+    <div class="row">
+      {{#each items as |item| }}
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="../assets/images/placeholder.jpg" id="img">
+          </div>
+          <div class="card-content">
+            <a class="card-item-name name" href="/item/{{item.id}}">{{item.name}}</a>
+            <p>${{item.price}}</p>
+            <p>Posted: {{format_date item.date_created}}</p>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  {{/if}}
+  <div class="offset-s3">
     <h3>Create a New Post:</h3>
 
-    <form class="form new-item-form">
+    <form class="form row new-item-form">
 
-      <div class="row">
-        <div class="form-group input-field col s4">
+      <div class="">
+        <div class="form-group input-field col s12 m6">
           <label for="item-name">Item Name</label>
           <input id="item-name" type="text" class="validate" name="item-name">
         </div>
       </div>
 
-      <div class="row">
-        <div class="form-group input-field col s4">
+      <div class="">
+        <div class="form-group input-field col s12 m6">
           <label for="item-price">Price</label>
           <input id="item-price" type="number" class="validate" name="item-price">
         </div>
       </div>
 
-      <div class="row" id="category">
-        <div class="form-group input-field col s4">
+      <div class="">
+        <div class="form-group input-field col s12 m6">
+          <label for="item-manufacturer">Manufacturer</label>
+          <input id="item-manufacturer" type="text" class="validate" name="item-manufacturer">
+        </div>
+      </div>
+
+      <div class="">
+        <div class="form-group input-field col s12 m6">
+          <label for="item-color">Color</label>
+          <input id="item-color" type="text" class="validate" name="item-color">
+        </div>
+      </div>
+
+      <div class="" id="category">
+        <div class="form-group input-field col s12 m6">
           <label id="category-label">Select A Category</label>
           <select id="dropdown" class="browser-default">
             <option value="" disabled selected>Choose your option</option>
@@ -40,47 +74,21 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="form-group input-field col s4">
-          <label for="item-manufacturer">Manufacturer</label>
-          <input id="item-manufacturer" type="text" class="validate" name="item-manufacturer">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group input-field col s4">
-          <label for="item-color">Color</label>
-          <input id="item-color" type="text" class="validate" name="item-color">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group input-field col s4">
+      <div class="">
+        <div class="form-group input-field col s12 m6">
           <label for="item-year">Year Manufactured</label>
           <input id="item-year" type="number" class="validate" name="item-year">
         </div>
       </div>
 
-      <div class="row">
-        <div class="form-group col s4">
+      <div class="">
+        <div class="form-group col s12">
           <label for="item-desc">Description:</label>
           <textarea class="form-input" id="item-desc" name="item-desc"></textarea>
         </div>
       </div>
 
-      <div class="row">
-        <div class="form-group col s4 file-field input-field">
-          <div class="btn">
-            <span>Add Photo</span>
-            <input type="file">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
+      <div class="">
         <div class="form-group col s12">
           <button type="submit" class="btn btn-primary">Create</button>
         </div>
@@ -89,29 +97,6 @@
     </form>
   </div>
 
-  {{#if items.length}}
-  <div class="col-md-6 items-list">
-    <h3>My Posts:</h3>
-
-    {{#each items as |item|}}
-    <div class="row">
-      <div class="col s12 m7">
-        <div class="card">
-          <div class="card-image">
-            <img src="../assets/images/randomimage.jpg">
-          </div>
-          <div class="card-content">
-            <a class="card-item-name" href="/item/{{item.id}}">{{item.name}}</a>
-          </div>
-          <div class="card-action">
-            <a class="btn btn-sm btn-danger" data-id="{{item.id}}">DELETE</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
 </div>
 
 <script src="./js/profile.js"></script>
