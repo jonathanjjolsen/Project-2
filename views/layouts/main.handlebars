@@ -6,59 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TradeHub</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
 
-  <body>
-    <nav class="nav-wrapper row blue-grey darken-1">
-        <div class="col s3">
-         <a href="/"><img class="responsive img" id="logo" src="../assets/images/TradeHub_Logo.jpg"></a>
-        </div>
-        <div class="col s8 input-field">
+<body>
+  <nav class="nav-wrapper row blue-grey darken-1" id="nav">
+    <a href="/"><img class="responsive-img col 1" id="logo" src="../assets/images/TradeHub_Logo.jpg"></a>
+    <div class="col s9">
+      <form id="navform">
+        <div class="input-field">
           <input id="search" type="search" required>
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
         </div>
-        <div class="col s1">
-     
+      </form>
+    </div>
+
+
+    <div class="col s1">
       {{#if logged_in}}
       <a href="/profile">profile</a> |
-      <button class="no-button right-aligned" id="logout">logout</button>
+      <button class="no-button" id="logout">logout</button>
       {{else}}
       <a href="/profile">Login</a>
       {{/if}}
-      </div>
-      </div>
-
-   
-    
-       
-    </nav>
-<div>yeyyeyeyeyeyeyey</div>
-
-
-
-
-
-
-  
-
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-
-    </footer>
     </div>
 
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="/js/logout.js"></script>
-    {{/if}}
-  </body>
+  </nav>
+
+  <main class="container container-fluid mt-5">
+    <!-- Render the sub layout -->
+    {{{ body }}}
+  </main>
+  <footer>
+
+  </footer>
+  </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
 
 </html>
