@@ -12,22 +12,35 @@
 <body>
   <div class="flex-column justify-space-around">
     
-      <header class="Toppage">
-        <h1>
-          <button class="white">
-            <img class="responsive-img" id="mainlogo" src="../assets/images/TradeHub_Logo.jpg" alt="text">
-          </button>
+    <nav>
+    <div class="nav-wrapper blue-grey darken-1">
+      
+      <a href="/"><img src="../assets/images/TradeHub_Logo.jpg"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/profile">Login</a></li>
+      </ul> 
+          </div>  
+    </div>
 
-        </h1>
-        <nav class="right-align blue-grey darken-1">
-
-          {{#if logged_in}}
+    {{#if logged_in}}
           <a href="/profile">profile</a> |
-          <button class="no-button" id="logout">logout</button>
+          <button class="no-button right-aligned" id="logout">logout</button>
           {{else}}
-          <a class="waves-effect waves-light btn-small" id="Login" href="/Login">Login</a>
+      
           {{/if}}
-        </nav>
+  </nav>
+   <nav>
+    <div class="nav-wrapper blue-grey darken-1">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+       
         </header>
    
     <main class="container container-fluid mt-5">
