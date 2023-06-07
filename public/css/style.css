@@ -82,6 +82,12 @@ a.card-item-name:active {
   }
 }
 
+#singleitem {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 
 
 

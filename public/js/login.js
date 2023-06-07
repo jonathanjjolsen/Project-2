@@ -26,11 +26,13 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
+  // Collects values from the signup form
   const name = document.querySelector('#name-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
   if (name && email && password) {
+    // Sends a post request to the EPI endpoint
     const response = await fetch('/signup', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),

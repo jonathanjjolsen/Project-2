@@ -27,3 +27,4 @@ Category.init(
     
 module.exports = Category;
     
+// class constructor for categories. This is a set standard of each category. Each category will have an id and a name.

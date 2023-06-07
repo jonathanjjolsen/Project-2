@@ -46,6 +46,6 @@ document
   .querySelector('.new-item-form')
   .addEventListener('submit', newFormHandler);
 
-// document
-//   .querySelector('.item-list')
-//   .addEventListener('click', delButtonHandler);
+document
+  .querySelector('.item-list')
+  .addEventListener('click', delButtonHandler);

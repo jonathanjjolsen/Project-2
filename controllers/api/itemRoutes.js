@@ -3,31 +3,7 @@ const { Op } = require("sequelize")
 const { Item, Category } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
-  const { category } = req.query;
-  try {
-    let categories
-    if (category) {
-      categories = await Category.findAll({
-        where: {
-          name: { [Op.like]: `%${category}%` }
-        },
-        include: [{
-          model: Item
-        }]
-      });
-    } else {
-      categories = await Category.findAll({
-      });
-
-    }
-
-    res.status(200).json(categories.map(item => item.get({ plain: true })));
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
+// Post route that allows the user to create a new item post. If the client is not logged in though, it will send them to the log in page with the custom withAuth middleware
 router.post('/', withAuth, async (req, res) => {
   try {
     const newItem = await Item.create({
@@ -41,6 +17,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// Delete route that allows the user to delete one of their posts
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const itemData = await Item.destroy({
