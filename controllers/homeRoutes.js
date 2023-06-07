@@ -131,4 +131,31 @@ router.post('/signup', async (req, res) => {
     res.redirect('/signup');
   }
 });
+router.get('/', async (req, res) => {
+  try {
+    const { category } = req.query; // Retrieve the value from the search bar
+    // Get all items for sale and JOIN with user and category data
+    const itemData = await Item.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+        {
+          model: Category,
+          where: { name: category }, // Filter by category name
+          attributes: ['name'],
+        },
+      ],
+    });
+    // Serialize data so the template can read it
+    const items = itemData.map((item) => item.get({ plain: true }));
+    // Pass serialized data and session flag into template
+    res.render('homepage', {
+      items,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
