@@ -15,7 +15,7 @@
   <nav class="nav row blue-grey darken-1" id="nav">
     <a href="/"><img class="responsive-img col 1" id="logo" src="../assets/images/TradeHub_Logo.jpg"></a>
     <div class="col s5">
-      <form>
+      <form id="searchBar">
       <div class="input-field" id="searchButton">
         <input id="search" type="search" required>
         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
@@ -49,8 +49,9 @@
   {{#if logged_in}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="/js/logout.js"></script>
-  {{/if}}
   
+  {{/if}}
+  <script src="/js/search.js"></script>
 </body>
 
 

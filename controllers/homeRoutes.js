@@ -1,34 +1,8 @@
 const router = require('express').Router();
+const {Op} = require("sequelize")
 const { Item, User, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Homepage selection. this renders the homepage handlebars.
-router.get('/', async (req, res) => {
-  try {
-    // Get all items for sale and JOIN with user data
-    const itemData = await Item.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-        {
-          model: Category,
-          attributes: ['name'],
-        }
-      ],
-    });
-
-    // Serialize data so the template can read it
-    const items = itemData.map((item) => item.get({ plain: true }));
-    // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      items, 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 // Get route that uses the withAuth custom middleware. This specific route will get the specific item attached to the ID. However, if the user is NOT logeed in, it will direct them to the log in page. 
 router.get('/item/:id', withAuth, async (req, res) => {
@@ -135,26 +109,41 @@ router.get('/', async (req, res) => {
   try {
     const { category } = req.query; // Retrieve the value from the search bar
     // Get all items for sale and JOIN with user and category data
-    const itemData = await Item.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
+    if(category){
+
+      itemData = await Category.findAll({
+        where: {
+          name: { [Op.like]: `%${category}%` }
         },
-        {
-          model: Category,
-          where: { name: category }, // Filter by category name
-          attributes: ['name'],
-        },
-      ],
-    });
+        include: [
+          {
+            model: Item,
+          },
+        ],
+      });
+    }else {
+      itemData = await Category.findAll({
+        include: [
+          {
+            model: Item,
+          },
+        ],
+      });
+
+    }
+    
     // Serialize data so the template can read it
-    const items = itemData.map((item) => item.get({ plain: true }));
+    const data = itemData.map((item) => item.get({ plain: true }));
     // Pass serialized data and session flag into template
+    
+    let items = [];
+    data.forEach(category => items.push(...category.items));
+    console.log(items)
     res.render('homepage', {
       items,
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
