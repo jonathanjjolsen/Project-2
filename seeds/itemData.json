@@ -6,7 +6,7 @@
     "manufacturer": "Les Paul",
     "color": "Brown",
     "year": "1980",
-    "category_id": 3,
+    "category_name": "Instruments",
     "user_id": 1
   },
   {
@@ -16,7 +16,7 @@
     "manufacturer": "Toyota",
     "color": "White",
     "year": 2012,
-    "category_id": 1,
+    "category_name": "Cars",
     "user_id": 2
   },
   {
@@ -26,7 +26,7 @@
     "manufacturer": "MSI",
     "color": "Black",
     "year": "2019",
-    "category_id": 2,
+    "category_name": "Electronics",
     "user_id": 3
   },
   {
@@ -36,7 +36,7 @@
     "manufacturer": "Astros",
     "color": "Black and Gold",
     "year": "2022",
-    "category_id": 2,
+    "category_name": "Electronics",
     "user_id": 2
   },
   {
@@ -46,7 +46,7 @@
     "manufacturer": "Canonball",
     "color": "Gold",
     "year": "2007",
-    "category_id": 3,
+    "category_name": "Instruments",
     "user_id": 3
   },
   {
@@ -56,7 +56,7 @@
     "manufacturer": "Nokia",
     "color": "Blue",
     "year": "2000",
-    "category_id": 2,
+    "category_name": "Electronics",
     "user_id": 1
   },
   {
@@ -66,7 +66,7 @@
     "manufacturer": "The Sky",
     "color": "Silver",
     "year": "1800",
-    "category_id": 4,
+    "category_name": "Tools",
     "user_id": 4
   },
   {
@@ -76,7 +76,7 @@
     "manufacturer": "Rawling",
     "color": "Brown",
     "year": "2007",
-    "category_id": 5,
+    "category_name": "Sporting Equipment",
     "user_id": 5
   },
   {
@@ -86,7 +86,7 @@
     "manufacturer": "Big Lots",
     "color": "Red",
     "year": "1996",
-    "category_id": 6,
+    "category_name": "Furniture",
     "user_id": 6
   },
   {
@@ -96,7 +96,7 @@
     "manufacturer": "Pontiac",
     "color": "Gold",
     "year": "2005",
-    "category_id": 5,
+    "category_name": "Cars",
     "user_id": 1
   },
   {
@@ -106,7 +106,7 @@
     "manufacturer": "British Broadcasting Corporation",
     "color": "Blue",
     "year": "1700",
-    "category_id": 6,
+    "category_name": "Furniture",
     "user_id": 6
   },
   {
@@ -116,7 +116,7 @@
     "manufacturer": "Topps",
     "color": "White",
     "year": "1994",
-    "category_id": 5,
+    "category_name": "Sporting Equipment",
     "user_id": 4
   }
 ]

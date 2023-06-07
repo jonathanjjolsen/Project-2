@@ -1,12 +1,13 @@
 <!-- Loop over each object in the items array -->
+<div>
 <div class="row">
   {{#each items as |item| }}
   <div class="col s12 m6 l3">
-    <div class="card">
+    <div class="card large">
       <div class="card-image">
         <img src="../assets/images/placeholder.jpg" id="img">
       </div>
-      <div class="card-content">
+      <div class="card-content cardcontent">
         <a class="card-item-name name" href="/item/{{item.id}}">{{item.name}}</a>
         <p>${{item.price}}</p>
         <p>Posted: {{format_date item.date_created}}</p>
@@ -15,6 +16,7 @@
   </div>
   {{/each}}
 
+</div>
 </div>
 
 {{!-- handlebar for the homepage of the site. This will display items stored in the database/table --}}
