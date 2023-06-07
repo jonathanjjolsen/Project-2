@@ -1,6 +1,32 @@
 const router = require('express').Router();
-const { Item } = require('../../models');
+const { Op } = require("sequelize")
+const { Item, Category } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+router.get('/', async (req, res) => {
+  const { category } = req.query;
+  try {
+    let categories
+    if (category) {
+      categories = await Category.findAll({
+        where: {
+          name: { [Op.like]: `%${category}%` }
+        },
+        include: [{
+          model: Item
+        }]
+      });
+    } else {
+      categories = await Category.findAll({
+      });
+
+    }
+
+    res.status(200).json(categories.map(item => item.get({ plain: true })));
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 router.post('/', withAuth, async (req, res) => {
   try {
