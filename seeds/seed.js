@@ -20,10 +20,15 @@ const seedDatabase = async () => {
   })
 
   for (const item of itemData) {
+    const category = await Category.findOne({
+      where: {
+        name: item.category_name
+      }
+    });
     await Item.create({
       ...item,
       user_id: item.user_id,
-      category_id: item.category_id,
+      category_id: category.id,
     });
   }
 

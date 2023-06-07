@@ -138,7 +138,6 @@ router.get('/', async (req, res) => {
     
     let items = [];
     data.forEach(category => items.push(...category.items));
-    console.log(items)
     res.render('homepage', {
       items,
     });
